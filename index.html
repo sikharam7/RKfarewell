@@ -25,9 +25,9 @@
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    padding: 0px 16px;
+    padding: 136px;
      background-image:
        
       radial-gradient(circle at 15% 20%, rgba(11,37,69,0.04) 0%, transparent 40%),
@@ -35,7 +35,7 @@
   }
 
   .card {
-    max-width: 460px;
+    max-width: 760px;
     width: 100%;
     background: #ffffff;
     border-radius: 4px;
@@ -177,7 +177,7 @@
 
   @media (max-width: 420px) {
     h1 { font-size: 28px; }
-    .content { padding: 32px 24px 26px; }
+    .content { padding: 0px 24px 26px; }
   }
 .edge {
   position: fixed;
@@ -193,27 +193,32 @@
 .edge.left { left: 0; }
 .edge.right { right: 0; }
 
-.edge .strip { display: flex; gap: 8px; }
+.edge .strip { display: flex; flex-wrap: nowrap; gap: 8px; padding: 5px; }
 
 .edge.top .strip, .edge.bottom .strip {
+  flex-direction: row;
   width: max-content;
-  animation: rollX 40s linear infinite;
+  animation: rollX 60s linear infinite;
 }
 .edge.bottom .strip { animation-direction: reverse; }
 
 .edge.left .strip, .edge.right .strip {
   flex-direction: column;
-  animation: rollY 40s linear infinite;
+  height: max-content;
+  animation: rollY 60s linear infinite;
 }
 .edge.right .strip { animation-direction: reverse; }
 
 .edge img {
   width: 110px;
   height: 110px;
+  min-width: 110px;
+  min-height: 110px;
   object-fit: cover;
   border-radius: 8px;
-  flex-shrink: 0;
+  flex: 0 0 auto;
   opacity: 0.85;
+  display: block;
 }
 
 @keyframes rollX {
@@ -293,8 +298,16 @@
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
 }
+    body {
+        padding: 16px;
+        align-items: flex-start;
+    }
     .card {
-        max-width: 760px;
+        max-width: 460px;
+    }
+    .frame {
+        width: 200px;
+        height: 200px;
     }
 }
 </style>
@@ -338,8 +351,7 @@
         <img src="rk-photo.jpg" alt="RK">
       </div>
 
-      <div class="eyebrow"></div>
-      <h1>Wish You Bright Roads Ahead,RK</h1>
+      <h1>Wish You Bright Roads Ahead, RK</h1>
       <div class="script">from C&D</div>
 
       <p class="message">
