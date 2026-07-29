@@ -183,7 +183,7 @@
     position: fixed;
     top: 0;
     height: 100vh;
-    width: 320px;
+    width: 200px;
     overflow: hidden;
     z-index: 0;
 }
@@ -203,8 +203,8 @@
 }
 
 .side-column img {
-    width: 300px;
-    height: 300px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px;
     margin: 0 auto;
@@ -274,8 +274,8 @@
 }
 
 .mobile-gallery img {
-    width: 260px;
-    height: 260px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
     border-radius: 10px;
     border: 2px solid #fff;
@@ -313,46 +313,6 @@
   background: var(--navy);
   color: #fff;
   border-color: var(--navy);
-}
-  .mystery {
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px dashed rgba(11,37,69,0.15);
-}
-
-.mystery-q {
-  font-size: 13px;
-  color: var(--navy);
-  margin-bottom: 10px;
-}
-
-.mystery input {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  padding: 7px 12px;
-  border-radius: 20px;
-  border: 1px solid rgba(11,37,69,0.15);
-  outline: none;
-  width: 140px;
-}
-
-.mystery button {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  padding: 7px 14px;
-  border-radius: 20px;
-  border: none;
-  background: var(--gold);
-  color: #fff;
-  cursor: pointer;
-  margin-left: 6px;
-}
-
-.mystery-msg {
-  font-size: 12px;
-  margin-top: 8px;
-  min-height: 16px;
-  color: var(--teal);
 }
 </style>
 </head>
@@ -421,20 +381,7 @@
   <div class="audio-wrap">
   <div class="audio-label">🎧A Few Words, Carried Over </div>
   <div class="tracks" id="tracks">
-    <button data-src="voice1.mp3">Ravikant Yerram</button>
-    <button data-src="voice2.mp3">Ravi Kumar</button>
-    <button data-src="voice3.mp3">Suresh Archunan</button>
-    <button data-src="voice4.mp3">Mrunalini</button>
-    <button data-src="voice5.mp3">Mamatha</button>
-    <button data-src="voice6.mp3">Rupendra</button>
-    <button data-src="voice7.mp3">Mallik</button>
-    <button data-src="voice8.mp3">Mahesh</button>
-  </div>
-    <div class="mystery">
-    <div class="mystery-q">🔒One more voice, from somewhere further away.Can you take a guess,RK ?</div>
-    <input type="text" id="guess" placeholder="Type a name...">
-    <button id="guessBtn">Unlock</button>
-    <div class="mystery-msg" id="msg"></div>
+    <button data-src="voice9.mp3">Something from Luise</button>
   </div>
   <audio id="player" controls preload="none"></audio>
 </div>
@@ -448,40 +395,7 @@
       player.src = btn.dataset.src;
       player.play();
     });
-    const answers = ['luise', 'louise', 'luis'];
-let tries = 0;
-const msg = document.getElementById('msg');
-
-function unlock(text) {
-  msg.textContent = text;
-  document.querySelector('.mystery-q').textContent = '🔓 It was Luise.';
-  document.getElementById('guess').style.display = 'none';
-  document.getElementById('guessBtn').style.display = 'none';
-  buttons.forEach(b => b.classList.remove('active'));
-  player.src = 'voice9.mp3';
-  player.play();
-}
-
-document.getElementById('guessBtn').addEventListener('click', () => {
-  const val = document.getElementById('guess').value.trim().toLowerCase();
-  if (!val) return;
-  if (answers.some(a => val.includes(a))) {
-    unlock('Correct — here it is.');
-  } else {
-    tries++;
-    if (tries >= 3) {
-      unlock('Close enough. Here it is anyway.');
-    } else {
-      msg.textContent = tries === 1 ? 'Not quite. Try again.' : 'Still no. One more go.';
-    }
-  }
-});
-
-document.getElementById('guess').addEventListener('keydown', e => {
-  if (e.key === 'Enter') document.getElementById('guessBtn').click();
-});
   });
-    
 </script>
 </body>
 </html>
