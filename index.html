@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All The Best, RK</title>
+  <link rel="icon" type="image/png" href="yodlee-logo1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B2545;
+    --gold: #E8A33D;
+    --cream: #FAF6EF;
+    --teal: #3E6259;
+    --ink: #1F2937;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0px 16px;
+     background-image:
+       
+      radial-gradient(circle at 15% 20%, rgba(11,37,69,0.04) 0%, transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(232,163,61,0.08) 0%, transparent 40%);
+  }
+
+  .card {
+    max-width: 460px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 30px 60px -20px rgba(11,37,69,0.25), 0 2px 8px rgba(11,37,69,0.06);
+    overflow: hidden;
+    position: relative;
+    animation: riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes riseIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .band {
+    height: 6px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--gold) 100%);
+  }
+
+  .content {
+    padding: 0px 30px 20px;
+    text-align: center;
+  }
+
+  .logo {
+    width: 200px;
+    margin: 0 auto 0px;
+    opacity: 0.92;
+    display: block;
+  }
+  .divider {
+    width: 60px;
+    height: 2px;
+    margin: 0 auto 10px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+  .frame {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    padding: 5px;
+    background: conic-gradient(from 180deg, var(--gold), #f4cf8a, var(--gold));
+    animation: fadeScale 1s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    display: block;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .script {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
+
+  .message {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: #4B5563;
+    margin-bottom: 16px;
+    padding: 0 6px;
+  }
+
+  .audio-wrap {
+    background: var(--cream);
+    border: 1px solid rgba(11,37,69,0.08);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+  }
+
+  .audio-label {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  audio {
+    width: 100%;
+    height: 38px;
+  }
+
+  audio::-webkit-media-controls-panel {
+    background-color: #fff;
+  }
+
+  .signoff {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--teal);
+  }
+
+  .footer-mark {
+    margin-top: 26px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: #4B5563;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 420px) {
+    h1 { font-size: 28px; }
+    .content { padding: 32px 24px 26px; }
+  }
+.side-column {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 320px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.side-column.left { left: 0; }
+.side-column.right { right: 0; }
+
+.side-column .strip {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: scrollUp 22s linear infinite;
+}
+
+.side-column.right .strip {
+    animation: scrollDown 22s linear infinite;
+}
+
+.side-column img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
+@keyframes scrollUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+    from { transform: translateY(-50%); }
+    to { transform: translateY(0); }
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+}
+
+/*
+  @media (max-width: 900px) {
+    .side-column { display: none; }
+}
+*/
+.mobile-gallery {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .side-column {
+        display: none;
+    }
+  /*
+    .mobile-gallery {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 4px 4px 12px;
+        margin: 16px 0;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .mobile-gallery img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid #fff;
+        box-shadow: 0 4px 12px rgba(11,37,69,0.15);
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+  */
+  .mobile-gallery {
+    display: block;
+    overflow: hidden;
+    margin: 16px 0;
+}
+
+.hstrip {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    animation: scrollLeft 25s linear infinite;
+}
+
+.mobile-gallery img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 12px rgba(11,37,69,0.15);
+    flex-shrink: 0;
+}
+  @keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+    .card {
+        max-width: 760px;
+    }
+}
+.tracks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.tracks button {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  padding: 7px 13px;
+  border-radius: 20px;
+  border: 1px solid rgba(11,37,69,0.15);
+  background: #fff;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.tracks button.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+  .mystery {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(11,37,69,0.15);
+}
+
+.mystery-q {
+  font-size: 13px;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.mystery input {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(11,37,69,0.15);
+  outline: none;
+  width: 140px;
+}
+
+.mystery button {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: none;
+  background: var(--gold);
+  color: #fff;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.mystery-msg {
+  font-size: 12px;
+  margin-top: 8px;
+  min-height: 16px;
+  color: var(--teal);
+}
+</style>
+</head>
+<body>
+<div class="side-column left">
+  <div class="strip">
+    <img src="photo1.jpg" alt="">
+    <img src="photo2.jpg" alt="">
+    <img src="photo3.jpg" alt="">
+    <img src="photo4.jpg" alt="">
+    <img src="photo5.jpg" alt="">
+    <img src="photo1.jpg" alt="">
+    <img src="photo2.jpg" alt="">
+    <img src="photo3.jpg" alt="">
+    <img src="photo4.jpg" alt="">
+    <img src="photo6.jpg" alt="">
+  </div>
+</div>
+
+<div class="side-column right">
+  <div class="strip">
+    <img src="photo6.jpg" alt="">
+    <img src="photo7.jpg" alt="">
+    <img src="photo8.jpg" alt="">
+    <img src="photo9.jpg" alt="">
+    <img src="photo10.jpg" alt="">
+    <img src="photo6.jpg" alt="">
+    <img src="photo7.jpg" alt="">
+    <img src="photo8.jpg" alt="">
+    <img src="photo9.jpg" alt="">
+    <img src="photo10.jpg" alt="">
+  </div>
+</div>
+
+  <div class="card">
+    <div class="band"></div>
+    <div class="content">
+      <img class="logo" src="yodlee-logo.png" alt="Yodlee">
+      <div class="divider"></div>
+
+      <div class="frame">
+        <img src="rk-photo.jpg" alt="RK">
+      </div>
+
+      <div class="eyebrow"></div>
+      <h1>Wish You Bright Roads Ahead,RK</h1>
+      <div class="script">from PS</div>
+
+      <p class="message">
+        Every team is better because of the people who shape it and you shaped ours in ways we won't forget. Thank you for the guidance, the patience😉, and the trust. Wherever this next chapter takes you, we know it'll be fortunate to have you.
+      </p>
+<div class="mobile-gallery">
+  <div class="hstrip">
+  <img src="photo1.jpg" alt="Memory 1">
+  <img src="photo2.jpg" alt="Memory 2">
+  <img src="photo3.jpg" alt="Memory 3">
+  <img src="photo4.jpg" alt="Memory 4">
+  <img src="photo5.jpg" alt="Memory 5">
+  <img src="photo6.jpg" alt="Memory 6">
+  <img src="photo7.jpg" alt="Memory 7">
+  <img src="photo8.jpg" alt="Memory 8">
+  <img src="photo9.jpg" alt="Memory 9">
+  <img src="photo10.jpg" alt="Memory 10">
+     </div>
+  </div>
+  <div class="audio-wrap">
+  <div class="audio-label">🎧A Few Words, Carried Over </div>
+  <div class="tracks" id="tracks">
+    <button data-src="voice1.mp3">Ravikant Yerram</button>
+    <button data-src="voice2.mp3">Ravi Kumar</button>
+    <button data-src="voice3.mp3">Suresh Archunan</button>
+    <button data-src="voice4.mp3">Mrunalini</button>
+    <button data-src="voice5.mp3">Mamatha</button>
+    <button data-src="voice6.mp3">Rupendra</button>
+    <button data-src="voice7.mp3">Mallik</button>
+    <button data-src="voice8.mp3">Mahesh</button>
+  </div>
+    <div class="mystery">
+    <div class="mystery-q">🔒One more voice, from somewhere further away.Can you take a guess,RK ?</div>
+    <input type="text" id="guess" placeholder="Type a name...">
+    <button id="guessBtn">Unlock</button>
+    <div class="mystery-msg" id="msg"></div>
+  </div>
+  <audio id="player" controls preload="none"></audio>
+</div>
+  <script>
+  const player = document.getElementById('player');
+  const buttons = document.querySelectorAll('#tracks button');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      player.src = btn.dataset.src;
+      player.play();
+    });
+    const answers = ['luise', 'louise', 'luis'];
+let tries = 0;
+const msg = document.getElementById('msg');
+
+function unlock(text) {
+  msg.textContent = text;
+  document.querySelector('.mystery-q').textContent = '🔓 It was Luise.';
+  document.getElementById('guess').style.display = 'none';
+  document.getElementById('guessBtn').style.display = 'none';
+  buttons.forEach(b => b.classList.remove('active'));
+  player.src = 'voice9.mp3';
+  player.play();
+}
+
+document.getElementById('guessBtn').addEventListener('click', () => {
+  const val = document.getElementById('guess').value.trim().toLowerCase();
+  if (!val) return;
+  if (answers.some(a => val.includes(a))) {
+    unlock('Correct — here it is.');
+  } else {
+    tries++;
+    if (tries >= 3) {
+      unlock('Close enough. Here it is anyway.');
+    } else {
+      msg.textContent = tries === 1 ? 'Not quite. Try again.' : 'Still no. One more go.';
+    }
+  }
+});
+
+document.getElementById('guess').addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('guessBtn').click();
+});
+  });
+    
+</script>
+</body>
+</html>
