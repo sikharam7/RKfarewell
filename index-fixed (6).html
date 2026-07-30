@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All The Best, RK</title>
+  <link rel="icon" type="image/png" href="yodleelogo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B2545;
+    --gold: #E8A33D;
+    --cream: #FAF6EF;
+    --teal: #3E6259;
+    --ink: #1F2937;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 150px 160px 210px;
+     background-image:
+       
+      radial-gradient(circle at 15% 20%, rgba(11,37,69,0.04) 0%, transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(232,163,61,0.08) 0%, transparent 40%);
+  }
+
+  .card {
+    max-width: 720px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 30px 60px -20px rgba(11,37,69,0.25), 0 2px 8px rgba(11,37,69,0.06);
+    position: relative;
+    animation: riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes riseIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .band {
+    height: 6px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--gold) 100%);
+  }
+
+  .content {
+    padding: 0px 30px 18px;
+    text-align: center;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    margin: 14px auto 12px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+  .frame {
+    width: 112px;
+    height: 112px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    padding: 5px;
+    background: conic-gradient(from 180deg, var(--gold), #f4cf8a, var(--gold));
+    animation: fadeScale 1s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    display: block;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 1.18;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .script {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .message {
+    font-size: 14px;
+    line-height: 1.62;
+    color: #4B5563;
+    margin-bottom: 14px;
+    padding: 0 4px;
+  }
+
+  .audio-wrap {
+    background: var(--cream);
+    border: 1px solid rgba(11,37,69,0.08);
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+  }
+
+  .audio-label {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  audio {
+    width: 100%;
+    height: 32px;
+    display: block;
+  }
+
+  audio::-webkit-media-controls-panel {
+    background-color: #fff;
+  }
+
+  .signoff {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--teal);
+  }
+
+  .footer-mark {
+    margin-top: 14px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: #4B5563;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 420px) {
+    h1 { font-size: 28px; }
+    .content { padding: 0px 24px 26px; }
+  }
+.orbit {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.orbit img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0.85;
+  offset-rotate: 0deg;
+  offset-anchor: center;
+  animation: orbitRun linear infinite;
+  will-change: offset-distance;
+}
+
+@keyframes orbitRun {
+  from { offset-distance: 0%; }
+  to   { offset-distance: 100%; }
+}
+
+@media (max-width: 900px) {
+  .orbit { display: none; }
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+}
+
+/*
+  @media (max-width: 900px) {
+    .side-column { display: none; }
+}
+*/
+.mobile-gallery {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .side-column {
+        display: none;
+    }
+  /*
+    .mobile-gallery {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 4px 4px 12px;
+        margin: 16px 0;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .mobile-gallery img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid #fff;
+        box-shadow: 0 4px 12px rgba(11,37,69,0.15);
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+  */
+  .mobile-gallery {
+    display: block;
+    overflow: hidden;
+    margin: 16px 0;
+}
+
+.hstrip {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    animation: scrollLeft 25s linear infinite;
+}
+
+.mobile-gallery img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 12px rgba(11,37,69,0.15);
+    flex-shrink: 0;
+}
+  @keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+    body {
+        padding: 16px;
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+        align-items: flex-start;
+    }
+    .card {
+        max-width: 460px;
+        max-height: none;
+        overflow-y: visible;
+    }
+    .frame {
+        width: 200px;
+        height: 200px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="orbit" id="orbit" aria-hidden="true"></div>
+
+  <div class="card">
+    <div class="band"></div>
+    <div class="content">
+      <div class="divider"></div>
+
+      <div class="frame">
+        <img src="rk-photo.jpg" alt="RK">
+      </div>
+
+      <h1>Wish You Bright Roads Ahead, RK</h1>
+      <div class="script">from C&D</div>
+
+      <p class="message">
+        Every team is better because of the people who shape it and you shaped ours in ways we won't forget. Thank you for the guidance, the patience😉, and the trust. Wherever this next chapter takes you, we know it'll be fortunate to have you.
+      </p>
+<div class="mobile-gallery">
+  <div class="hstrip">
+  <img src="photo1.jpg" alt="Memory 1">
+  <img src="photo2.jpg" alt="Memory 2">
+  <img src="photo3.jpg" alt="Memory 3">
+  <img src="photo4.jpg" alt="Memory 4">
+  <img src="photo5.jpg" alt="Memory 5">
+  <img src="photo6.jpg" alt="Memory 6">
+  <img src="photo7.jpg" alt="Memory 7">
+  <img src="photo8.jpg" alt="Memory 8">
+  <img src="photo9.jpg" alt="Memory 9">
+  <img src="photo10.jpg" alt="Memory 10">
+     </div>
+</div>
+      <div class="audio-wrap">
+        <div class="audio-label">🎧 A Little Something from Luise</div>
+        <audio controls preload="none">
+          <source src="Luise.mp3" type="audio/mpeg">
+          Your browser doesn't support audio playback.
+        </audio>
+      </div>
+
+      <div class="signoff">With gratitude and best wishes</div>
+      <div class="footer-mark">PSQA &middot; PS-RMT</div>
+    </div>
+  </div>
+
+
+<script>
+(function () {
+  var PHOTOS = ['photo1.jpg','photo2.jpg','photo3.jpg','photo4.jpg','photo5.jpg',
+                'photo6.jpg','photo7.jpg','photo8.jpg','photo9.jpg','photo10.jpg'];
+  var SIZE = 110;   // photo size, must match CSS
+  var GAP  = 14;    // space between photos
+  var SPEED = 26;   // pixels per second
+
+  var orbit = document.getElementById('orbit');
+  if (!orbit) return;
+
+  var supported = window.CSS && CSS.supports &&
+                  CSS.supports('offset-path', 'path("M 0 0 L 1 1")');
+  if (!supported) { orbit.style.display = 'none'; return; }
+
+  function build() {
+    var w = window.innerWidth, h = window.innerHeight;
+    if (w <= 900) { orbit.innerHTML = ''; return; }
+
+    var m = SIZE / 2 + 8;                       // inset from the screen edge
+    var x1 = m, y1 = m, x2 = w - m, y2 = h - m;
+    var path = 'M ' + x1 + ' ' + y1 +
+               ' L ' + x2 + ' ' + y1 +
+               ' L ' + x2 + ' ' + y2 +
+               ' L ' + x1 + ' ' + y2 + ' Z';
+
+    var perimeter = 2 * ((x2 - x1) + (y2 - y1));
+    var count = Math.max(8, Math.round(perimeter / (SIZE + GAP)));
+    var dur = perimeter / SPEED;
+
+    orbit.innerHTML = '';
+    for (var i = 0; i < count; i++) {
+      var img = document.createElement('img');
+      img.src = PHOTOS[i % PHOTOS.length];
+      img.alt = '';
+      img.style.offsetPath = 'path("' + path + '")';
+      img.style.animationDuration = dur + 's';
+      img.style.animationDelay = (-(i / count) * dur) + 's';
+      orbit.appendChild(img);
+    }
+  }
+
+  build();
+  var t;
+  window.addEventListener('resize', function () {
+    clearTimeout(t);
+    t = setTimeout(build, 250);
+  });
+})();
+</script>
+
+</body>
+</html>
